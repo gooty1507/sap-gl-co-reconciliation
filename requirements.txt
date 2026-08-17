@@ -1,0 +1,5 @@
+# Core script uses only the Python standard library.
+# These are optional, for extending the project (e.g. pandas-based analysis,
+# Power BI/Excel-ready exports with formatting).
+pandas>=2.0
+openpyxl>=3.1
