@@ -1,0 +1,13 @@
+SAP FI (GL) vs CO Reconciliation Summary
+=============================================
+GL records:        500
+CO records:        501
+Total exceptions:  65
+Total variance:    $392,696.50
+
+Exceptions by type:
+  AMOUNT_MISMATCH           20
+  COST_CENTER_MISMATCH      14
+  DUPLICATE_IN_CO           10
+  MISSING_IN_CO             15
+  MISSING_IN_GL             6
