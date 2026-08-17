@@ -1,0 +1,8 @@
+document_number,break_type,gl_amount,co_amount,gl_cost_center,co_cost_center,variance,detail
+DOC0100002,AMOUNT_MISMATCH,5505.02,5510.02,CC1022,CC1022,5.0,FI and CO amounts do not agree
+DOC0100012,COST_CENTER_MISMATCH,5764.75,5764.75,CC1012,CC1026,0,Cost center reposted in CO after FI posting
+DOC0100054,AMOUNT_MISMATCH,291.26,292.01,CC1017,CC1017,0.75,FI and CO amounts do not agree
+DOC0100055,MISSING_IN_CO,14583.61,,CC1001,,14583.61,Document posted in FI but never reached CO
+DOC0100059,DUPLICATE_IN_CO,20065.77,40131.54,CC1025,CC1025,20065.77,Document appears 2x in CO extract
+DOC0900001,MISSING_IN_GL,,167.14,,CC1027,167.14,CO-only posting with no corresponding FI document
+DOC0900000,MISSING_IN_GL,,4111.66,,CC1014,4111.66,CO-only posting with no corresponding FI document
