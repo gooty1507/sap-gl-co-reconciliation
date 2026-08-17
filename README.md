@@ -21,7 +21,9 @@ end-to-end with realistic (synthetic) data.
 1. `src/generate_data.py` generates synthetic GL and CO extracts shaped
    like real SAP data — document number, company code, cost center, GL
    account, vendor, amount, posting date — and intentionally bakes in five
-   kinds of realistic reconciliation breaks.
+   kinds of realistic reconciliation breaks. By default it generates 500 GL
+   records; the committed `data/` sample in this repo is a smaller 60-record
+   version so it's easy to review directly on GitHub.
 2. `src/reconcile.py` matches the two extracts on document number and
    flags every exception it finds.
 3. Results land in `output/exceptions_report.csv` (line-item detail) and
@@ -57,7 +59,7 @@ python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# 1. Generate (or regenerate) the synthetic extracts
+# 1. Generate (or regenerate) the synthetic extracts (500 records by default)
 python src/generate_data.py
 
 # 2. Run the reconciliation
@@ -71,10 +73,12 @@ names (`document_number`, `cost_center`, `gl_account`, `amount`,
 
 ## Sample output
 
-Running the reconciliation against the included synthetic dataset
-(500 GL records) flags roughly 65-80 exceptions across all five break types,
-with a few hundred thousand dollars of total variance — see
-`output/summary.txt` for the exact numbers from the last run.
+The committed sample dataset (60 GL records / 62 CO records) produces 7
+exceptions across all five break types, with $38,933.93 of total variance —
+see `output/summary.txt` and `output/exceptions_report.csv` for the full
+breakdown. Running `generate_data.py` with its default settings produces
+the full 500-record dataset, which typically flags 65-80 exceptions with a
+few hundred thousand dollars of total variance.
 
 ## Possible next steps
 
